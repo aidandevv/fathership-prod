@@ -1,0 +1,15 @@
+<div class='space-y-4'>
+  <div class='flex justify-between items-center bg-gray-100 shadow-md rounded p-4 hover:bg-gray-200 transition duration-300'>
+    <div class='flex items-center space-x-2'>
+      <%= link_to chat_list, data: { turbo_frame: "_top" }, class: 'text-black no-underline flex items-center space-x-2' do %>
+        
+        <span><%= chat_list.list_name %></span>
+      <% end %>
+    </div>
+    <div>
+      <%= button_to @chat, method: :delete, data: { turbo_frame: "_top", confirm: 'Are you sure?' }, class: 'flex items-center justify-center bg-red-600 text-white rounded p-2 hover:bg-red-700 transition duration-300' do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
