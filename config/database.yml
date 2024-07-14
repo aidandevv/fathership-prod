@@ -26,7 +26,5 @@ production:
   password: <%= ENV['DATABASE_PASSWORD'] %>
   host: <%= ENV['DATABASE_HOST'] %>
   port: <%= ENV.fetch("DATABASE_PORT", 5432) %>
-  sslmode: <%= ENV.fetch("DATABASE_SSLMODE", "verify-full") %>
-  sslrootcert: <%= ENV['DATABASE_SSLROOTCERT'] %>
   database: <%= ENV['DATABASE_NAME'] %>
   timeout: 5000
