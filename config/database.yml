@@ -20,10 +20,13 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  url: <%= ENV['DATABASE_URL'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
   host: <%= ENV['DATABASE_HOST'] %>
-  port: 5432
+  port: <%= ENV.fetch("DATABASE_PORT", 5432) %>
+  sslmode: <%= ENV.fetch("DATABASE_SSLMODE", "verify-full") %>
+  sslrootcert: <%= ENV['DATABASE_SSLROOTCERT'] %>
   database: <%= ENV['DATABASE_NAME'] %>
   timeout: 5000
