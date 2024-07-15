@@ -4,9 +4,10 @@
   <header class="container mx-auto px-4 py-16 text-white">
     <div class="flex flex-col md:flex-row items-center justify-between">
       <div class="md:w-1/2 mb-8 md:mb-0">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Fathership</h1>
-        <p class="text-xl mb-8">Your AI companion for every journey in life</p>
-        <%= link_to "Get Started", chats_path, class: "bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300" %>
+        <h1 id="greeting" class="text-4xl md:text-6xl font-bold mb-4">Hey there, champ</h1>
+        <p class="text-xl mb-8">Welcome to Fathership, we're glad to see you.</p>
+        <%= link_to "Get Started", chats_path, class: "bg-white text-blue-600 px-6 py-3 mr-4 rounded-full font-semibold hover:bg-blue-100 transition duration-300" %>
+        <%= link_to "Sign In", new_user_registration_path, class: "bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300" %>
       </div>
       <div class="md:w-1/2">
         <%= image_tag 'use.png', alt: 'Fathership AI', class: 'rounded-lg shadow-xl' %>
@@ -15,44 +16,122 @@
   </header>
 
   <div class="flex flex-col md:flex-row items-center justify-center">
-    <h1 class=" text-white text-4xl md:text-6xl font-bold mb-4">A father figure, for <span class="gradient-text">all</span> who need him</h1>
+    <h1 class="text-white text-4xl md:text-8xl font-bold mb-12">A father figure, for <span class="gradient-text-all">all</span> who need him</h1>
   </div>
 
+  <!-- App Demos -->
+
+  <!-- Shaving -->
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-1/2">
+        <h1 class="text-white text-xl md:text-5xl font-bold mb-4">Ask any questions you have, <span class="text-indigo-900 text-7xl">judgement free</span></h1>
+      </div>
+      <div class="md:w-11/12">
+        <div class="ml-8 rounded-lg shadow-lg overflow-hidden">
+          <%= image_tag 'landing-shave.png', alt: 'App Functionality Example', class: 'w-full rounded-lg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advice -->
+  <div class="max-w-6xl mx-auto px-8 py-12">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-11/12">
+        <div class="mr-8 rounded-lg shadow-lg overflow-hidden">
+          <%= image_tag 'advice2.png', alt: 'App Functionality Example', class: 'w-full rounded-lg' %>
+        </div>
+      </div>
+      <div class="md:w-1/2">
+        <h1 class="text-white text-2xl md:text-5xl font-bold mb-4">Advice for your <span class="gradient-text-big text-7xl">big</span> moments</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Support -->
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="md:w-1/2">
+        <h1 class="text-white text-2xl md:text-5xl font-bold mb-4">A <span class="gradient-text-help text-6xl">helping hand</span> to guide you in times of need</h1>
+      </div>
+      <div class="md:w-11/12">
+        <div class="ml-8 rounded-lg shadow-lg overflow-hidden">
+          <%= image_tag 'support2.png', alt: 'App Functionality Example', class: 'w-full rounded-lg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- End App Demos -->
   <div class="max-w-4xl mx-auto px-4 py-8">
-  
-  <div class="space-y-6">
-    <div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+    <div class="flex flex-col items-center text-center">
       <div class="flex items-center mb-2">
-        <span class="text-3xl mr-2">🧠</span>
-        <h3 class="text-xl font-semibold">Intelligent Conversations</h3>
+        <i class="fa fa-user-circle fa-2x gradient-text-help" aria-hidden="true"></i>
+        <h3 class="ml-2 text-xl font-semibold"> Personalized Experience</h3>
       </div>
-      <p>Engage in meaningful dialogues with our advanced AI.</p>
+      <p>Tailored interactions based on your unique needs and preferences. Talk as little or as much as you want, Fathership is here for you.</p>
     </div>
 
-    <div>
+    <div class="flex flex-col items-center text-center">
       <div class="flex items-center mb-2">
-        <span class="text-3xl mr-2">🌟</span>
-        <h3 class="text-xl font-semibold">Personalized Experience</h3>
+        <i class="fa fa-lock fa-2x gradient-text-help" aria-hidden="true"></i>
+        <h3 class="ml-2 text-xl font-semibold">Privacy Focused</h3>
       </div>
-      <p>Tailored interactions based on your unique needs and preferences.</p>
+      <p>Your conversations are always private and secure. Your conversations stay between you and Fathership.</p>
     </div>
 
-    <div>
+    <div class="flex flex-col items-center text-center">
       <div class="flex items-center mb-2">
-        <span class="text-3xl mr-2">🔒</span>
-        <h3 class="text-xl font-semibold">Privacy Focused</h3>
+        <i class="fa fa-comments fa-2x gradient-text-help" aria-hidden="true"></i>
+        <h3 class="ml-2 text-xl font-semibold">Natural Feel</h3>
       </div>
-      <p>Your conversations are always private and secure.</p>
+      <p>Fathership is designed to feel like you were texting your role model, letting you focus on what to say instead of how.</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center">
+      <div class="flex items-center mb-2">
+        <i class="fa fa-credit-card-alt fa-2x gradient-text-help" aria-hidden="true"></i>
+        <h3 class="ml-2 text-xl font-semibold">Free, Forever</h3>
+      </div>
+      <p>Fathership is a service that aims to be free forever - we don't ask for any payment to sign up. However, as a student-run project, donations are appreciated! Check the About page to see how.</p>
     </div>
   </div>
 </div>
-<%= yield %>
+
+
+
+  <%= yield %>
+
   <!-- Call to Action -->
-  <section class=" py-16 border-spacing-1">
+  <section class="py-16 border-spacing-1">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">Ready to start your journey?</h2>
       <p class="text-xl mb-8">Join thousands of users benefiting from Fathership's AI companion.</p>
-      <a href="#" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300">Sign Up Now</a>
+      <%= link_to 'Sign Up Now', new_user_registration_path, class: 'bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300' %>
     </div>
   </section>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var greetingElement = document.getElementById('greeting');
+    var now = new Date();
+    var hours = now.getHours();
+    var greeting;
+
+    if (hours < 12) {
+      greeting = 'Rise and shine buddy';
+    } else if (hours < 18) {
+      greeting = 'Good afternoon, champ';
+    } else if (hours < 20) {
+      greeting = 'Good evening, champ';
+    } else {
+      greeting = 'Up late, champ?';
+    }
+
+    greetingElement.innerText = greeting;
+  });
+</script>
