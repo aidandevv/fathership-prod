@@ -4,13 +4,14 @@
       <% unless chat.q_and_a.blank? %>
         <% chat.q_and_a.each do |question, answer| %>
           <div class="flex flex-col space-y-2">
-            <div class="flex justify-end items-end">
-              <div class="bg-blue-500 text-white rounded-lg py-2 px-4 max-w-xs">
-                <%= simple_format question, class: "text-sm" %>
+            <% unless question.blank? %>
+              <div class="flex justify-end items-end">
+                <div class="bg-blue-500 text-white rounded-lg py-2 px-4 max-w-xs">
+                  <%= simple_format question, class: "text-sm" %>
+                </div>
+                <%= image_tag("user.ico", class: "w-8 h-8 rounded-full mr-2", alt: "User") %>
               </div>
-              <%= image_tag("user.ico", class: "w-8 h-8 rounded-full mr-2", alt: "AI Assistant") %>
-
-            </div>
+            <% end %>
             <div class="flex justify-start items-end">
               <%= image_tag("father.png", class: "w-8 h-8 rounded-full mr-2", alt: "AI Assistant") %>
               <div class="bg-gray-300 rounded-lg py-2 px-4 max-w-xs">
