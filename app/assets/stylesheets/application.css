@@ -22,8 +22,19 @@
  @tailwind utilities;
  /* Your custom styles here */
 
- .gradient-text {
-    background: linear-gradient(to right, #4f46e5, #ec4899); /* Adjust the colors to your liking */
+ .gradient-text-all {
+    background: linear-gradient(to right, #8b46e5, #ec4899); /* Adjust the colors to your liking */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-text-big {
+    background: linear-gradient(to right, #4f46e5, #0c7aa5); /* Adjust the colors to your liking */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-text-help {
+    background: linear-gradient(to right,#08911f, #077911); /* Adjust the colors to your liking */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
