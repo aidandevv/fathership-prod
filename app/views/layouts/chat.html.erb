@@ -23,8 +23,7 @@
   </head>
 
   <body class="flex flex-col min-h-screen">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
 
     <!-- Header -->
     <header class="bg-gray-900 text-white py-4">
@@ -87,7 +86,8 @@
           <div class="w-full md:w-1/3 mb-6 md:mb-0">
             <h4 class="text-lg font-medium mb-2">Quick Links</h4>
             <ul class="text-gray-400 text-sm">
-              <!-- Add your quick links here -->
+              <%= link_to "About", about_path %>
+              <%= link_to "Resources", support_path %>
             </ul>
           </div>
           <div class="w-full md:w-1/3 justify-right align-right items-right">

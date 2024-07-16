@@ -1,0 +1,2 @@
+module MoreResourcesHelper
+end

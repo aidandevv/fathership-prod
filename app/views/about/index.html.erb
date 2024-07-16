@@ -1,0 +1,66 @@
+<%# app/views/home/about.html.erb %>
+<div class="container mx-auto py-16 px-6">
+  <style>
+    .glowing-outline {
+      box-shadow: 0 0 10px 2px rgba(0, 123, 255, 0.5), 0 0 20px 4px rgba(0, 123, 255, 0.5), 0 0 30px 6px rgba(0, 123, 255, 0.5);
+    }
+  </style>
+
+  <!-- About Me Section -->
+  <div class="flex items-center mb-8">
+    <div class="flex-shrink-0">
+      <%= image_tag 'aidan.JPEG', alt: 'Aidan', class:"w-48 h-48 rounded-full mr-8"%>
+    </div>
+    <div>
+      <h1 class="text-4xl font-bold mb-2">About Me & Fathership</h1>
+      <p class="text-lg text-gray-700">Hi! I'm Aidan DeVaney, the developer and creator behind Fathership. 
+        I'm a third year Computer Science major with a Technology Management minor at UC Davis.
+        </p>
+    </div>
+  </div>
+
+  <!-- About the Project Section -->
+  <div class="bg-white shadow-md rounded-lg p-4 mb-12">
+    <h2 class="text-2xl font-semibold mb-4">About the Project</h2>
+    <p class="text-gray-700">First, thank you for checking out Fathership! 
+      This is a passion project that I was inspired to develop to give kids and those who may not have had a father figure in their lives a chance to talk to one, anytime. 
+      As an only child in a single parent household, I personally felt the need for this concept but was suprised to not find anything readily available. 
+      <b>So, I decided to change that.</b><br><br>
+      
+      As a passion project, I've been developing this in my free time, learning as I go, covering all the costs associated with it. 
+      If you'd like to generously support this project, please consider donating to my <a href="https://www.buymeacoffee.com/aidandev" class="text-yellow-600 hover:underline">Buy Me a Coffee</a> page.
+      Thank you, and I hope you enjoy using Fathership as much as I enjoyed building it!</p>
+      <p>
+
+    <h3 class="text-xl font-semibold mb-2 mt-4">Now for the nerdy stuff...</h3>
+    <p class="text-gray-700">This is a web application full-stack developed by me using Ruby on Rails and Tailwinds CSS in my tech stack. 
+      It's supported by PostgreSQL in AWS RDS and REDIS services on the backend, hosted on Heroku, and with OpenAI's ChatGPT API powering the AI you know and love. <p>
+  </div>
+
+  <!-- Hiring Manager Card -->
+  <div class="bg-white shadow-md rounded-lg p-6 mb-12 glowing-outline">
+    <h2 class="text-2xl font-semibold mb-4">Are you a Recruiter or Hiring Manager?</h2>
+    <p class="text-gray-700 mb-4">Hi! Great to meet you, and I'm truly glad you're checking out my app. <b>I'm currently searching for a Summer 2025 intership position!</b> 
+    If you're interested in learning more about my work or seeing the source code, I'd love to connect with you on:</p>
+    <div class="flex items-center">
+      <div class="flex-shrink-0">
+        <%= image_tag 'waves.gif', alt: 'Business Image', class: 'w-12 h-12' %>
+      </div>
+      <div class="ml-4">
+        <p class="text-lg font-medium text-gray-900">LinkedIn: <a href="https://www.linkedin.com/in/aidan-devaney/" class="text-blue-500 hover:underline">Here</a></p>
+        <p class="text-lg font-medium text-gray-900">Handshake: <a href="https://app.joinhandshake.com/profiles/40951729" class="text-blue-500 hover:underline">Here</a></p>
+        <p class="text-lg font-medium text-gray-900 mb-4">Email: <a href="mailto:108648945+aidandevv@users.noreply.github.com" class="text-blue-500 hover:underline">108648945+aidandevv@users.noreply.github.com</a></p>
+      </div>
+    </div>
+    <p class="text-gray-700 mb-4">Driving my love developing apps for problems I know I can solve is my passion for leading the intersection of technology and people.
+      <b>I'd love to bring that passion and my skills to your team in both Project Management and Software Engineering roles.</b> 
+    </p>
+  </div>
+
+  <!-- Contact for Website Info -->
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <h2 class="text-2xl font-semibold mb-4">Website Inquiries</h2>
+    <p class="text-gray-700 mb-2">For any inquiries, typos, issues, or suggestions related to this website, please email me at:</p>
+    <p class="text-lg font-medium text-gray-900"><a href="mailto:108648945+aidandevv@users.noreply.github.com" class="text-blue-500 hover:underline">108648945+aidandevv@users.noreply.github.com</a></p>
+  </div>
+</div>
