@@ -105,12 +105,11 @@ class ChatsController < ApplicationController
 
   # DELETE /chats/1 or /chats/1.json
   def destroy
-    @chat = Chat.find(params[:id])
     @chat.destroy
     respond_to do |format|
-      format.html { redirect_to chats_url}
-      format.json { head :no_content }
       format.turbo_stream { render turbo_stream: turbo_stream.remove(dom_id(@chat)) }
+      format.html { redirect_to chats_url }
+      format.json { head :no_content }
     end
   end
 

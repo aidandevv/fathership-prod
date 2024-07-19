@@ -1,1 +1,3 @@
-<%= turbo_stream.remove "chat_#{@chat.id}" %>
+<!-- destroy.turbo_stream.erb -->
+<%= turbo_stream.remove dom_id(@chat) %>
+
