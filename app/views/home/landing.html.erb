@@ -98,7 +98,11 @@
         <i class="fa fa-credit-card-alt fa-2x text-indigo-900" aria-hidden="true"></i>
         <h3 class="ml-2 text-xl font-semibold">Free, Forever</h3>
       </div>
-      <p>Fathership is a service that aims to be free forever: we don't ask for any payment to sign up. However, as a student-run project, donations are appreciated! Check the About page to see how you can help.</p>
+        <p>
+          Fathership is a service that aims to be free forever: we don't ask for any payment to sign up. 
+          However, as a student-run project, donations are appreciated! 
+          Check the <b><%= link_to 'About', about_path, class: 'gradient-text-big' %></b> page to see how you can help.
+        </p>
     </div>
   </div>
 </div>
@@ -107,14 +111,29 @@
 
   <%= yield %>
 
-  <section class="py-16 border-spacing-1">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">See behind the scenes!</h2>
+<div class="container mx-auto px-4 text-center flex justify-between space-x-1 items-stretch">
+  <section class="py-16 border-spacing-1 flex-1 flex">
+    <div class="bg-white bg-opacity-15 shadow-lg rounded p-8 transition-transform transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+      <div>
+        <h2 class="text-3xl font-bold mb-4">See Behind the Scenes!</h2>
         <p class="text-xl mb-8">Meet the student creator and the story behind Fathership below.</p>
-        <%= link_to 'Show Me', about_path, class: 'bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300' %>
       </div>
-    </section>
-  </div>
+      <%= link_to 'Show Me', about_path, class: 'bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300' %>
+    </div>
+  </section>
+
+  <section class="py-16 border-spacing-1 flex-1 flex">
+    <div class="bg-white bg-opacity-15 shadow-lg rounded p-8 transition-transform transform hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+      <div>
+        <h2 class="text-3xl font-bold mb-4">Explore Free Resources</h2>
+        <p class="text-xl mb-8">Check out a collection of articles, social media channels, and helpful links for resources on fatherly information.</p>
+      </div>
+      <%= link_to 'Let\'s go', support_path, class: 'bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300' %>
+    </div>
+  </section>
+</div>
+
+
 
   <!-- Call to Action -->
 
@@ -122,10 +141,11 @@
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">Ready to start your conversation?</h2>
       <p class="text-xl mb-8">Join those already benefiting from Fathership's support.</p>
-      <%= link_to 'Sign Up Now', new_user_registration_path, class: 'text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300' %>
+      <%= link_to 'Sign Up Now', new_user_registration_path, class: 'bg-white text-blue-700 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300' %>
     </div>
   </section>
 </div>
+  </div>
 
 
 
