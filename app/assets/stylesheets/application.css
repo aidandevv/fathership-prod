@@ -72,3 +72,10 @@
   .gradient-bg-extra {
     background: linear-gradient(to right, #3730a3, #4261ff); /* Adjust the colors to your liking */
   }
+  .text-outline {
+    text-shadow: 
+    1px 1px 0 #fff,  
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,  
+    -1px 1px 0 #fff,  
+  }

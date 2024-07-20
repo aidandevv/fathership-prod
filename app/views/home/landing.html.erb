@@ -5,9 +5,11 @@
     <div class="flex flex-col md:flex-row items-center justify-between">
       <div class="md:w-1/2 mb-8 md:mb-0">
         <h1 id="greeting" class="text-4xl md:text-6xl font-bold mb-4">Hey there, champ</h1>
-        <p class="text-xl mb-8">Welcome to Fathership, we're glad to see you.</p>
+        <p id="welcome" class="text-xl mb-8">Welcome to Fathership, we're glad to see you.</p>
         <%= link_to "Get Started", new_user_registration_path, class: "bg-white text-blue-600 px-6 py-3 mr-4 rounded-full font-semibold hover:bg-blue-100 transition duration-300" %>
-        <%= link_to "Log In", new_user_session_path, class: "bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300" %>
+        <% unless user_signed_in? %>
+          <%= link_to "Log In", new_user_session_path, class: "bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition duration-300" %>
+        <% end %>
       </div>
       <div class="md:w-1/2">
         <%= image_tag 'use.png', alt: 'Fathership AI', class: 'rounded-lg shadow-xl' %>
@@ -46,7 +48,7 @@
         </div>
       </div>
       <div class="md:w-1/2">
-        <h1 class="text-white text-2xl md:text-5xl font-bold mb-4">Advice for your <span class="gradient-text-big text-7xl">big</span> moments</h1>
+        <h1 class="text-white text-2xl md:text-5xl font-bold mb-4">Advice for your <span class="text-indigo-900 text-7xl text-outline">big</span> moments</h1>
       </div>
     </div>
   </div>
@@ -55,7 +57,7 @@
   <div class="max-w-6xl mx-auto px-4 py-12">
     <div class="flex flex-col md:flex-row items-center justify-between">
       <div class="md:w-1/2">
-        <h1 class="text-white text-2xl md:text-5xl font-bold mb-4">A <span class="gradient-text-help text-6xl">helping hand</span> to guide you in times of need</h1>
+        <h1 class="text-white text-2xl md:text-5xl font-bold mb-4">A <span class="text-indigo-900 text-6xl">helping hand</span> to guide you in times of need</h1>
       </div>
       <div class="md:w-11/12">
         <div class="ml-8 rounded-lg shadow-lg overflow-hidden">
@@ -101,7 +103,7 @@
         <p>
           Fathership is a service that aims to be free forever: we don't ask for any payment to sign up. 
           However, as a student-run project, donations are appreciated! 
-          Check the <b><%= link_to 'About', about_path, class: 'gradient-text-big' %></b> page to see how you can help.
+          Check the <b><%= link_to 'About', about_path, class: 'text-indigo-900' %></b> page to see how you can help.
         </p>
     </div>
   </div>
@@ -136,7 +138,7 @@
 
 
   <!-- Call to Action -->
-
+<% unless user_signed_in? %>
   <section class="py-16 border-spacing-1">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">Ready to start your conversation?</h2>
@@ -146,27 +148,44 @@
   </section>
 </div>
   </div>
-
-
+<% end %>
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     var greetingElement = document.getElementById('greeting');
     var now = new Date();
     var hours = now.getHours();
     var greeting;
 
     if (hours < 12) {
-      greeting = 'Rise and shine buddy';
+      greeting = 'Hi! Good morning';
     } else if (hours < 18) {
-      greeting = 'Good afternoon, champ';
+      greeting = 'Hey there, good afternoon';
     } else if (hours < 20) {
-      greeting = 'Good evening, champ';
+      greeting = 'Good evening';
     } else {
-      greeting = 'Up late, champ?';
+      greeting = 'Hey, up late?';
     }
 
-    greetingElement.innerText = greeting;
+    <% if user_signed_in? %>
+      var firstName = "<%= current_user.first_name %>";
+      if (hours < 20) {
+        greetingElement.innerText = greeting + ' ' + firstName + '!';
+      } else {
+        greetingElement.innerText = 'Hey, up late, ' + firstName + '?';
+      }
+    <% else %>
+      greetingElement.innerText = greeting;
+    <% end %>
   });
-</script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var greetingElement = document.getElementById('welcome');
+      <% if user_signed_in? %>
+        greetingElement.innerText = 'Welcome back to Fathership!';
+      <% else %>
+        greetingElement.innerText = 'Welcome to Fathership, we\'re glad to see you!';
+      <% end %>
+      });
+  </script>

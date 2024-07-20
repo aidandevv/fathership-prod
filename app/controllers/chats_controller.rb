@@ -75,11 +75,11 @@ class ChatsController < ApplicationController
 
   # POST /chats or /chats.json
   def create
-    @chat = Chat.new(user_id: current_user.id)
-
+    @chat = current_user.chats.new
+    @chat.set_intro_message(current_user.first_name, current_user.last_name)
     respond_to do |format|
       if @chat.save
-        format.html { redirect_to chat_url(@chat) }
+        format.html { redirect_to @chat }
         format.json { render :show, status: :created, location: @chat }
         format.turbo_stream
       else
@@ -94,7 +94,7 @@ class ChatsController < ApplicationController
   def update
     respond_to do |format|
       if @chat.update(chat_params)
-        format.html { redirect_to chat_url(@chat) }
+        format.html { redirect_to @chat }
         format.json { render :show, status: :ok, location: @chat }
       else
         format.html { render :edit, status: :unprocessable_entity }
