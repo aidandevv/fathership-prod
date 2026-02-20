@@ -1,3 +1,12 @@
-<!-- destroy.turbo_stream.erb -->
-<%= turbo_stream.remove dom_id(@chat) %>
-
+<%= turbo_stream.remove dom_id(@chat, :list) %>
+<%= turbo_stream.replace "current-chat" do %>
+  <turbo-frame id="current-chat">
+    <div class="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
+      <p class="text-sm text-slate-600">Chat deleted.</p>
+      <%= form_with(model: Chat.new, class: "mt-4") do |form| %>
+        <%= form.submit "Start a new chat", class: "rounded-full bg-slate-900 px-5 py-2 text-sm font-medium text-white hover:bg-slate-700" %>
+      <% end %>
+    </div>
+  </turbo-frame>
+<% end %>
+<%= turbo_stream.replace "flash", partial: "shared/flash" %>

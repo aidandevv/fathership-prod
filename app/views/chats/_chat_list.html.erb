@@ -1,10 +1,6 @@
-<div class='space-y-4'>
-  <div class='flex justify-between items-center bg-gray-100 shadow-md rounded p-4 hover:bg-gray-200 transition duration-300 mb-2'>
-    <div class='flex items-center space-x-2'>
-      <%= link_to chat_list, data: { turbo_frame: "_top" }, class: 'text-black no-underline flex items-center space-x-2' do %>
-        
-        <span><%= chat_list.list_name %></span>
-      <% end %>
-    </div>
-  </div>
+<div id="<%= dom_id(chat_list, :list) %>" class="mb-2">
+  <%= link_to chat_list, data: { turbo_frame: "_top" }, class: "block rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 hover:border-slate-300 hover:bg-slate-100" do %>
+    <p class="truncate text-sm font-medium text-slate-800"><%= chat_list.list_name %></p>
+    <p class="text-xs text-slate-500"><%= time_ago_in_words(chat_list.updated_at) %> ago</p>
+  <% end %>
 </div>

@@ -1,11 +1,21 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   user: one
-  history: 
-  q_and_a: MyString
+  created_at: <%= Time.current %>
+  updated_at: <%= Time.current %>
+  history:
+    prompt: "You are a supportive guide."
+    intro: "Hey Alex, I am here for you."
+    turns:
+      - user: "I feel stressed."
+        assistant: "Thanks for sharing. Let's take one small step together."
+  q_and_a: []
 
 two:
   user: two
-  history: 
-  q_and_a: MyString
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.days.ago %>
+  history:
+    prompt: "You are a supportive guide."
+    intro: "Hey Jordan, I am here for you."
+    turns: []
+  q_and_a: []

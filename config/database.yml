@@ -1,30 +1,26 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  port: 5432
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
+  host: <%= ENV.fetch("POSTGRES_HOST", "127.0.0.1") %>
+  port: <%= ENV.fetch("POSTGRES_PORT", 5432) %>
+  username: <%= ENV.fetch("POSTGRES_DBUSER", "postgres") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD", "postgres") %>
+
 development:
   <<: *default
-  database: fathership_development
-  host: <%= ENV['POSTGRES_HOST'] %>
-  port: <%= ENV['POSTGRES_PORT'] %>
-  username: <%= ENV['POSTGRES_DBUSER'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: <%= ENV.fetch("POSTGRES_DB", "fathership_development") %>
+
 test:
   <<: *default
-  database: fathership_test
-  host: <%= ENV['POSTGRES_HOST'] %>
-  port: <%= ENV['POSTGRES_PORT'] %>
-  username: <%= ENV['POSTGRES_DBUSER'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: <%= ENV.fetch("POSTGRES_TEST_DB", "fathership_test") %>
+
 production:
-  adapter: postgresql
-  encoding: unicode
-  url: <%= ENV['DATABASE_URL'] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['DATABASE_USERNAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+  database: <%= ENV.fetch("DATABASE_NAME", "fathership_production") %>
+  username: <%= ENV.fetch("DATABASE_USERNAME", ENV.fetch("POSTGRES_DBUSER", "postgres")) %>
+  password: <%= ENV.fetch("DATABASE_PASSWORD", ENV.fetch("POSTGRES_PASSWORD", "")) %>
+  host: <%= ENV.fetch("DATABASE_HOST", ENV.fetch("POSTGRES_HOST", "127.0.0.1")) %>
   port: <%= ENV.fetch("DATABASE_PORT", 5432) %>
-  database: <%= ENV['DATABASE_NAME'] %>
   timeout: 5000
