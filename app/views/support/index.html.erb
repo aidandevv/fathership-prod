@@ -1,121 +1,63 @@
-<%# app/views/home/resources.html.erb %>
-<div class="min-h-screen bg-blue-100 py-16 px-6">
-  <h1 class="text-4xl font-bold mb-8 text-center">Resources</h1>
+<div class="mx-auto max-w-5xl space-y-6">
+  <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h1 class="text-3xl font-semibold text-slate-900">Resources</h1>
+    <p class="mt-2 text-slate-700">
+      A practical list of channels and reading that pair well with the supportive chat experience.
+      Every link opens in a new tab.
+    </p>
+  </section>
 
-  <!-- Social Media Channels Section -->
-  <div class="bg-white shadow-md rounded-lg p-6 mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Social Media Channels</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-       <div class="mb-4">
-        <a href="https://www.youtube.com/channel/UCNepEAWZH0TBu7dkxIbluDw" class="text-blue-500 hover:underline" target="_blank">
-          <b>Dad, how do I?</b>
-        </a>
-        <p class="text-gray-700 text-sm"><b>Dad, how do I?</b> is a YouTube creator who answers common questions for fathers for those who didn't have one.
-           He does everything from changing tires to cooking chili, so he's a great resource for common questions and topics.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://www.youtube.com/@DadAdviceFromBo" class="text-blue-500 hover:underline" target="_blank">
-          <b>Dad Advice From Bo</b>
-        </a>
-        <p class="text-gray-700 text-sm"><b>Bo</b> is much like Dad, how do I? with providing how-to's for home chores with a loving and positive messages ending each video.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://www.tiktok.com/@purepower34?is_from_webapp=1&sender_device=pc" class="text-blue-500 hover:underline" target="_blank">
-          <b>Killer Bee Tactical</b>
-        </a>
-        <p class="text-gray-700 text-sm"><b>Brent from Killer Bee Tactical</b> provides valuable self defense tips for both digital and physical security.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://www.youtube.com/channel/UC9hR3DH_UC-mS8XzdmS40qg" class="text-blue-500 hover:underline" target="_blank">
-          <b>Your Korean Dad</b>
-        </a>
-        <p class="text-gray-700 text-sm"><b>Nick Cho</b> is a warm, loving and supportive character who is a great source of encouragement and positive messages.
-          Find him on YouTube, Instagram and TikTok.
-        </p>
-      </div>
-      <div class="mb-4">
-        <a href="https://www.youtube.com/@scottykilmer" class="text-blue-500 hover:underline" target="_blank">
-          <b>Automotive Basics</b>
-        </a>
-        <p class="text-gray-700 text-sm"><b>Scotty Kilmer</b> is a great resource for car mechanic basics, from general maintenance to fun car mods.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://www.youtube.com/watch?v=yPAeRiKa0h8" class="text-blue-500 hover:underline" target="_blank">
-          <b>Intro to Grilling</b>
-        </a>
-        <p class="text-gray-700 text-sm"><b>Rick Bayless</b> shows you the basics of grilling -- a great skill to have and improve on.</p>
-      </div>
+  <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="text-xl font-semibold text-slate-900">Supportive Creators</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.youtube.com/channel/UCNepEAWZH0TBu7dkxIbluDw" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">Dad, How Do I?</a>
+        <p class="mt-2 text-sm text-slate-700">Clear, practical everyday guides from a calm and encouraging perspective.</p>
+      </article>
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.youtube.com/@DadAdviceFromBo" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">Dad Advice From Bo</a>
+        <p class="mt-2 text-sm text-slate-700">Friendly home and life advice with an uplifting tone and easy steps.</p>
+      </article>
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.youtube.com/channel/UC9hR3DH_UC-mS8XzdmS40qg" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">Your Korean Dad</a>
+        <p class="mt-2 text-sm text-slate-700">Short encouragement-focused content centered on warmth, care, and consistency.</p>
+      </article>
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.tiktok.com/@purepower34" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">Killer Bee Tactical</a>
+        <p class="mt-2 text-sm text-slate-700">Practical safety content covering digital and physical awareness basics.</p>
+      </article>
     </div>
-  </div>
-  <!--
-   Helpful Articles Section 
-  <div class="bg-white shadow-md rounded-lg p-6 mb-12">
-    <h2 class="text-2xl font-semibold mb-4">Helpful Articles</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="mb-4">
-        <a href="https://example.com/article1" class="text-blue-500 hover:underline" target="_blank">
-          <b>Article Title 1</b>
-        </a>
-        <p class="text-gray-700 text-sm">A brief description of what this article covers and how it can help.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://example.com/article2" class="text-blue-500 hover:underline" target="_blank">
-          <b>Article Title 2</b>
-        </a>
-        <p class="text-gray-700 text-sm">A brief description of what this article covers and how it can help.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://example.com/article3" class="text-blue-500 hover:underline" target="_blank">
-          <b>Article Title 3</b>
-        </a>
-        <p class="text-gray-700 text-sm">A brief description of what this article covers and how it can help.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://example.com/article4" class="text-blue-500 hover:underline" target="_blank">
-          <b>Article Title 4</b>
-        </a>
-        <p class="text-gray-700 text-sm">A brief description of what this article covers and how it can help.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://example.com/article5" class="text-blue-500 hover:underline" target="_blank">
-          <b>Article Title 5</b>
-        </a>
-        <p class="text-gray-700 text-sm">A brief description of what this article covers and how it can help.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://example.com/article6" class="text-blue-500 hover:underline" target="_blank">
-          <b>Article Title 6</b>
-        </a>
-        <p class="text-gray-700 text-sm">A brief description of what this article covers and how it can help.</p>
-      </div>
-    </div>
-  </div>
-  -->
+  </section>
 
-  <!-- Books Section -->
-
-  <div class="bg-white shadow-md rounded-lg p-6">
-    <h2 class="text-2xl font-semibold mb-4">Books</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="mb-4">
-        <a href="https://www.goodreads.com/book/show/6690.Danny_the_Champion_of_the_World" class="text-blue-500 hover:underline" target="_blank">
-          <b>Danny the Champion of the World by Rohl Dahl</b>
-        </a>
-        <p class="text-gray-700 text-sm">This childrens story highlights the importance of having a positive role model, and overcoming adversity.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://www.goodreads.com/book/show/2657.To_Kill_a_Mockingbird" class="text-blue-500 hover:underline" target="_blank">
-          <b>To Kill a Mockingbird by Harper Lee</b>
-        </a>
-        <p class="text-gray-700 text-sm"> A classic, To Kill a Mockingbird shows the importance of morals and a solid mentor and father figure.</p>
-      </div>
-      <div class="mb-4">
-        <a href="https://www.goodreads.com/book/show/347852.The_Road_Less_Traveled" class="text-blue-500 hover:underline" target="_blank">
-          <b>The Road Less Traveled by M. Scott Peck</b>
-        </a>
-        <p class="text-gray-700 text-sm">This book gives you an insight into your personality and helps you realize you can take control of your life.</p>
-      </div>
-      
+  <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="text-xl font-semibold text-slate-900">Hands-On Life Skills</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.youtube.com/@scottykilmer" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">Scotty Kilmer</a>
+        <p class="mt-2 text-sm text-slate-700">Car care and maintenance basics that are easy to follow and low-cost to start.</p>
+      </article>
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.youtube.com/watch?v=yPAeRiKa0h8" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">Intro to Grilling (Rick Bayless)</a>
+        <p class="mt-2 text-sm text-slate-700">A straightforward intro to grilling fundamentals and kitchen confidence.</p>
+      </article>
     </div>
-  </div>
+  </section>
+
+  <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="text-xl font-semibold text-slate-900">Books</h2>
+    <div class="mt-4 grid gap-4 md:grid-cols-2">
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.goodreads.com/book/show/6690.Danny_the_Champion_of_the_World" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">Danny the Champion of the World</a>
+        <p class="mt-2 text-sm text-slate-700">A story about resilience and the impact of a strong role model.</p>
+      </article>
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <a href="https://www.goodreads.com/book/show/2657.To_Kill_a_Mockingbird" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">To Kill a Mockingbird</a>
+        <p class="mt-2 text-sm text-slate-700">A classic on moral courage, empathy, and principled mentorship.</p>
+      </article>
+      <article class="rounded-xl border border-slate-200 bg-slate-50 p-4 md:col-span-2">
+        <a href="https://www.goodreads.com/book/show/347852.The_Road_Less_Traveled" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-blue-700 hover:underline">The Road Less Traveled</a>
+        <p class="mt-2 text-sm text-slate-700">Personal growth themes focused on responsibility, discipline, and emotional maturity.</p>
+      </article>
+    </div>
+  </section>
 </div>

@@ -64,7 +64,7 @@ bin/dev
 
 ## Environment Variables
 
-- Required in production: `SECRET_KEY_BASE`, `DATABASE_URL`
+- Required in production: `SECRET_KEY_BASE`, `DATABASE_URL`, `APP_HOST`, `MAILER_FROM`
 - Optional AI settings: `OPENAI_ACCESS_TOKEN`, `OPENAI_MODEL` (default `gpt-5-nano`), `OPENAI_MAX_TOKENS`, `OPENAI_TEMPERATURE`, `OPENAI_REQUEST_TIMEOUT`, `OPENAI_RETRY_COUNT`, `OPENAI_RETRY_BASE_DELAY`, `CHAT_CONTEXT_TURN_LIMIT`, `CHAT_MESSAGE_CHAR_LIMIT`
 
 If `OPENAI_ACCESS_TOKEN` is not set, chats fall back to local responses.

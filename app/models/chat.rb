@@ -135,7 +135,7 @@ class Chat < ApplicationRecord
         }
       )
 
-      content = response.dig("choices", 0, "message", "content").to_s.strip
+      content = extract_assistant_content(response)
       return content if content.present?
 
       raise "OpenAI returned an empty response"
@@ -155,6 +155,23 @@ class Chat < ApplicationRecord
 
   def openai_client
     OpenAI::Client.new(access_token: ENV["OPENAI_ACCESS_TOKEN"])
+  end
+
+  def extract_assistant_content(response)
+    content = response.dig("choices", 0, "message", "content")
+
+    case content
+    when String
+      content.strip
+    when Array
+      content.filter_map do |part|
+        next unless part.is_a?(Hash)
+
+        part["text"] || part.dig("text", "value")
+      end.join("\n").strip
+    else
+      ""
+    end
   end
 
   def fallback_response(message, reason: :general)
